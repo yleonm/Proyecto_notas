@@ -21,10 +21,7 @@ app.use(express.urlencoded({ extended: false }));
 //global variables
 
 //routes
-app.get('/', (req,res) => {
-    res.render('index');
-});
-
+app.use(require('./routes/index.routes'));
 //static files
 app.use(express.static(path.join(__dirname, 'public')));
 
