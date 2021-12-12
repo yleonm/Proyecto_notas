@@ -6,6 +6,7 @@ const methodOverride = require('method-override');
 const flash = require('connect-flash');
 const session = require('express-session');
 
+
 //initializations
 const app = express();
 
@@ -40,6 +41,7 @@ app.use((req, res, next) => {
 //routes
 app.use(require('./routes/index.routes'));
 app.use(require('./routes/notes.routes'));
+app.use(require('./routes/users.routes'));
 //static files
 app.use(express.static(path.join(__dirname, 'public')));
 
