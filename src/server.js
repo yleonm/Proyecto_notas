@@ -7,6 +7,7 @@ const flash = require('connect-flash');
 const session = require('express-session');
 
 
+
 //initializations
 const app = express();
 
@@ -36,6 +37,7 @@ app.use(flash());
 //global variables
 app.use((req, res, next) => {
     res.locals.success_message = req.flash('success_message');
+    res.locals.error_msg = req.flash('error_msg');
     next();
 });
 //routes
